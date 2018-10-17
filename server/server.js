@@ -24,6 +24,9 @@ io.on('connection', (socket) => {
       callback('Room and room name are required.');
     }
 
+    // Set room to lower case
+    params.room = params.room.toLowerCase();
+
     socket.join(params.room);
     users.removeUser(socket.id); // Remove from potential previous room
     users.addUser(socket.id, params.name, params.room);

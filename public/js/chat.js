@@ -24,7 +24,7 @@ socket.on('connect', function() {
       alert(err);
       window.location.href = "/";
     } else {
-      console.log('No error');
+      console.log(`User ${params.name} joined room ${params.room} successfully!`);
     }
   });
 });
